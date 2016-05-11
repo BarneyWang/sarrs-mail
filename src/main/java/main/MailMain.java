@@ -31,18 +31,18 @@ public class MailMain {
     }
 
 
-    public static void main(String[] args) {
-        CommandLine line = parseMainArg(args);
-        String filePath = line.getOptionValue("f");
-        MailContent content = CreateMail.transfrom(filePath);
-        MailUtil.sendSimpleMail(content.getFrom(),content.getTo().split(","), content.getSubject(),content.getContent());
-    }
-
-
-
 //    public static void main(String[] args) {
-//        MailContent content = CreateMail.transfrom("NewFile");
+//        CommandLine line = parseMainArg(args);
+//        String filePath = line.getOptionValue("f");
+//        MailContent content = CreateMail.transfrom(filePath);
 //        MailUtil.sendSimpleMail(content.getFrom(),content.getTo().split(","), content.getSubject(),content.getContent());
-//
 //    }
+
+
+
+    public static void main(String[] args) {
+        MailContent content = CreateMail.transfrom("/Users/bojack/Documents/sarrs_mail_2016-05-09.xml");
+        MailUtil.sendSimpleMail(content.getFrom(),content.getTo().split(","), content.getSubject(),content.getContent());
+
+    }
 }
